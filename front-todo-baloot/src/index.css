@@ -1,0 +1,238 @@
+:root {
+  --bg: #0f1720;
+  --card: #111827;
+  --muted: #9ca3af;
+  --accent: #60a5fa;
+  --accent-2: #7c3aed;
+  --text: #e6eef6;
+  --danger: #ef4444;
+  --radius: 10px;
+
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* Card wrapper used for all pages */
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+}
+
+/* Centered small card for auth pages */
+.card.auth {
+  max-width: 420px;
+  padding: 28px;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+/* Form controls */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+}
+.input::placeholder {
+  color: var(--muted);
+}
+.input:focus {
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.7);
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+.btn.danger {
+  background: var(--danger);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Header inside todos */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.user-badge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.user-badge .email {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Todo list */
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.01);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.todo-item .title {
+  flex: 1;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+.todo-item.completed .title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+/* small controls */
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+/* Links and misc */
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.error {
+  color: var(--danger);
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+/* Light mode tweak */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f9fc;
+    --card: #ffffff;
+    --muted: #556272;
+    --accent: #3b82f6;
+    --accent-2: #6d28d9;
+    --text: #0b1220;
+    --danger: #dc2626;
+  }
+  body {
+    background-color: var(--bg);
+  }
+}
